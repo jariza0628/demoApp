@@ -1,0 +1,57 @@
+<!-- -->
+<ion-header>
+
+  <ion-navbar  color="primary">
+    <ion-title>
+      <span ion-text>Detalle AlphaCode3: {{ alphaCode }}</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="common-bg">
+
+  <ion-grid class="border-bottom dark-bg">
+    <ion-row>
+      <ion-col text-center>
+        <div class="text-sm">
+          <div>
+            <ion-icon name="list-box" margin-left class="text-white" ></ion-icon>
+            <span ion-text color="light" >{{numberResult}}</span>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
+
+  <!--booking form-->
+  <div class="booking-form card round" margin *ngFor="let item of resultDetaild">
+    <div class="border-bottom" padding>
+      <h5>City: {{ item.name }}</h5>
+
+      <!--choose guest-->
+      <ion-grid class="filters" no-padding margin-top>
+  
+        <ion-row margin-top>
+          <ion-col col-6>
+            <span ion-text color="primary"><strong>Pais: {{ item.country }}</strong> </span>
+          </ion-col>
+          <ion-col col-6>
+            <span ion-text color="primary"><strong>{{ item.abbr }}</strong></span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div padding class="form-bottom">
+<!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
+      <!--booking button-->
+      <button ion-button class="pull-right" color="secondary" tappable >Viajar
+      </button>
+      <div class="clear"></div>
+    </div>
+  </div>
+ 
+</ion-content>

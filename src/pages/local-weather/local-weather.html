@@ -1,0 +1,41 @@
+<!-- -->
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        <span ion-text>Resultado de la busqueda</span>
+      </ion-title>
+    </ion-navbar>
+  
+    <!--  -->
+    <ion-toolbar padding color="light">
+      <p ion-text no-margin class="text-white">
+        <strong>{{numerOfItens}}</strong> results found!
+      </p>
+    </ion-toolbar>
+  
+  </ion-header>
+
+<ion-content padding class="trips detail-bg">
+  <!--list of trips-->
+  <ion-list [virtualScroll]="items" approxItemHeight="100px" approxHeaderHeight="80px">
+
+   
+    <div *virtualItem="let item" class="trip card full"    tappable   margin-bottom  (click)="viewDetail(item.alpha3_code)">
+      <div class="background border-bottom"  style="background-image: url('http://static.t13.cl/images/sizes/1200x675/1479487776-mapa.jpg')">
+        <div class="background-filter rlt">
+          <div class="align-bottom" padding-left padding-right>
+            <h6 class="pull-left text-white" ion-text>{{ item.name }}</h6>
+            <h6 class="pull-right text-white" ion-text> </h6>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+      <div class="padding-sm primary-bg">
+        <ion-icon name="time" class="text-white"></ion-icon>
+        <span ion-text class="text-white">{{ item.alpha3_code }}</span>
+        <span class="pull-right" ion-text color="light"><strong>Paises</strong> (Virtual Scroll ionic)</span>
+      </div>
+    </div>
+  </ion-list>
+  
+</ion-content>

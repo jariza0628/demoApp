@@ -1,0 +1,56 @@
+<!-- -->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong>Prueba</strong> Makking App
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+
+  <ion-card no-margin margin-bottom class="full-width">
+    <ion-item tappable (click)="choosePlace('from')" class="border-bottom">
+      <ion-icon name="search" color="primary" item-left></ion-icon>
+      <span text-uppercase>{{ search.name }}</span>
+    </ion-item>
+    <ion-item>
+        <ion-icon name="text" color="primary" item-left></ion-icon>
+        <ion-input text-uppercase placeholder="Text Input" [(ngModel)]="search.name "></ion-input>
+
+       
+    </ion-item>
+  </ion-card>
+
+  <button ion-button icon-start block no-margin (click)="searchByCode(search.name)" color="primary" class="round" tappable  >
+    <ion-icon name="search" ></ion-icon> Buscar
+  </button>
+  <hr>
+  <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
+      <ion-icon name="list"></ion-icon> Listar todos los paises
+    </button>
+    <ion-card>
+
+      <ion-card-header>
+        Notas
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p>Jeffer Ariza, Desarrollador IONIC, Angular, PHP, .Net vb...</p>
+        <p>* La apliacion implenta virtual scroll <a href="https://ionicframework.com/docs/api/components/virtual-scroll/VirtualScroll/">virtualScroll</a> de ionic el cual remplaza la paginacion</p>
+        <p>* La api no posee Access-Control-Allow-Origin lo que limita la prueba en el navegador</p>
+        <p>* La api no posee DELETE para eliminar o modificar datos.</p>
+      </ion-card-content>
+    
+    </ion-card>
+
+</ion-content>
